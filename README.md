@@ -21,3 +21,6 @@ A reverse proxy can be used to forward requests from a `https://` domain to a Pl
 2. The reverse proxy looks up the previously stored server details for the given **matchId** and forwards the request to your `azure.com` hosted game server.
 
 ![Connecting to a match diagram](ConnectToMatch.png "Connecting to a match diagram")
+
+## Need help?
+While this is not an official solution, the best channel to discuss this respository or receive help is to [open an issue](https://github.com/PlayFab/MultiplayerServerSecureWebsocket/issues/new/choose).
