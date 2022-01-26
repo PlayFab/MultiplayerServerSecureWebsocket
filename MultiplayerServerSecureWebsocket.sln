@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplayerServerSecureWebsocket", "MultiplayerServerSecureWebsocket.csproj", "{968A6A28-A62D-430A-AEA9-4C3926B4E061}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{968A6A28-A62D-430A-AEA9-4C3926B4E061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968A6A28-A62D-430A-AEA9-4C3926B4E061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968A6A28-A62D-430A-AEA9-4C3926B4E061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968A6A28-A62D-430A-AEA9-4C3926B4E061}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B613D2B-C8AC-47C1-8B7B-F28B6BB8B95C}
+	EndGlobalSection
+EndGlobal
