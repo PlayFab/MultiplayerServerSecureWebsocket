@@ -14,7 +14,10 @@ A reverse proxy can be used to forward requests from a `https://` domain to a Pl
 1. A user requests a "match", or server to connect to. This sends a request to the game's API.
 2. The game's API calls the PlayFab [RequestMultiplayerServer](https://docs.microsoft.com/en-us/rest/api/playfab/multiplayer/multiplayer-server/request-multiplayer-server?view=playfab-rest) REST API and stores the server details with an identifier representing this "match" - we'll call it **matchId**.
 
+![Creating a match diagram](CreateMatch.png "Creating a match diagram")
 
 ### Connecting to a match
 1. Your game's browser client initiates a connection to your reverse proxy with the previous **matchId**. i.e. `wss://reverse-proxy.com/{matchId}`.
 2. The reverse proxy looks up the previously stored server details for the given **matchId** and forwards the request to your `azure.com` hosted game server.
+
+![Connecting to a match diagram](ConnectToMatch.png "Connecting to a match diagram")
