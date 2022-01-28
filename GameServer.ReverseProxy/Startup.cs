@@ -118,9 +118,9 @@ namespace GameServer.ReverseProxy
                     {
                         serverEndpoint = await detailsFactory.GetServerEndpoint(buildId, sessionId, region);
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
-                        logger.LogError(e, "{Method} failed", nameof(detailsFactory.GetServerEndpoint));
+                        context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
                     }
                     
                     // We couldn't find a server with this build/session/region
