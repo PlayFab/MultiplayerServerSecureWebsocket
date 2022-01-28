@@ -20,4 +20,4 @@ A reverse proxy can be used to forward requests from a `https://` domain to a Pl
 The previous flow could be modified to use the [Matchmaking API](https://docs.microsoft.com/en-us/rest/api/playfab/multiplayer/matchmaking?view=playfab-rest). Build ID, session ID, and region would be replaced with the the match ID and queue name returned from [Create Matchmaking Ticket](https://docs.microsoft.com/en-us/rest/api/playfab/multiplayer/matchmaking/create-matchmaking-ticket?view=playfab-rest).
 
 ## Need help?
-While this is not an official solution, the best channel to discuss this respository or receive help is to [open an issue](https://github.com/PlayFab/MultiplayerServerSecureWebsocket/issues/new/choose).
+While this is not an official solution, the best channel to discuss this respository or receive help is to [use the Discussion section](https://github.com/PlayFab/MultiplayerServerSecureWebsocket/discussions).
