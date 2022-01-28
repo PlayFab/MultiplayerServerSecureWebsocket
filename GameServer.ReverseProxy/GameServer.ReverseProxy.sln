@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiplayerServerSecureWebsocket", "MultiplayerServerSecureWebsocket.csproj", "{968A6A28-A62D-430A-AEA9-4C3926B4E061}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameServer.ReverseProxy", "GameServer.ReverseProxy.csproj", "{968A6A28-A62D-430A-AEA9-4C3926B4E061}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
