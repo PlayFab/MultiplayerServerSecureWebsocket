@@ -19,5 +19,20 @@ A reverse proxy can be used to forward requests from a `https://` domain to a Pl
 ### Servers allocated by Matchmaking
 The previous flow could be modified to use the [Matchmaking API](https://docs.microsoft.com/en-us/rest/api/playfab/multiplayer/matchmaking?view=playfab-rest). Build ID, session ID, and region would be replaced with the the match ID and queue name returned from [Create Matchmaking Ticket](https://docs.microsoft.com/en-us/rest/api/playfab/multiplayer/matchmaking/create-matchmaking-ticket?view=playfab-rest).
 
+### Deployment
+
+[This Dockerfile](https://github.com/PlayFab/MultiplayerServerSecureWebsocket/blob/main/GameServer.ReverseProxy/Dockerfile) creates a HTTP server that handles requests at `/{buildId}/{sessionId}/{region}/{**forwardPath}`. Requests are proxied to a game server in the `Active` state that was requested with [Request Multiplayer Server](https://docs.microsoft.com/en-us/rest/api/playfab/multiplayer/multiplayer-server/request-multiplayer-server?view=playfab-rest).
+
+https://github.com/PlayFab/MultiplayerServerSecureWebsocket/blob/27d9fa0b0db6a5cd2bcf7f2ba13fa0ba713fa7ee/GameServer.ReverseProxy/Startup.cs#L99
+
+The docker application is intended to be deployed as a web service that is **separate** from your game server. Game servers deployed as HTTP hosts run into the same issue that the repository [MultiplayerServerSecureWebsocket](https://github.com/PlayFab/MultiplayerServerSecureWebsocket) mentions as a problem for games hosted on a https domain - you can't generate a SSL certificate for the fully qualified azure.com domain name of each server session.
+
+[Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore?tabs=net60&pivots=development-environment-vs) is an "off the shelf" solution for the docker application. Linux and Windows should be supported since .NET Core is cross platform.
+
+### Integrating with your web client
+When your web client configures a web socket connection i.e. [ConnectEndpoint](https://docs-multiplayer.unity3d.com/docs/0.1.0/api/MLAPI.Transports.UNET.RelayTransport/#connectendpointint32-endpoint-int32-out-byte) with Unity or [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) in client side JavaScript, you'll use the fully qualified domain name from your deployed web service. 
+
+For example, if you created an Azure App Service, the full qualified domain name would be something like `https://myreverseproxy.azurewebsites.net/{buildId}/{sessionId}/{region}/`
+
 ## Need help?
 While this is not an official solution, the best channel to discuss this respository or receive help is to [use the Discussion section](https://github.com/PlayFab/MultiplayerServerSecureWebsocket/discussions).
